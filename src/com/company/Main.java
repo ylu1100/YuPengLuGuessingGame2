@@ -4,23 +4,26 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
-	int min = 1;
-	int max = 100;
-	int x = 50;
-	String str = "";
+	public static void main(String[] args) {
+		int min = 1;
+		int max = 100;
 		Scanner input = new Scanner(System.in);
-		while (!(str == "correct")){
-			x = (min + max)/2;			System.out.println("Is your number " + x);
+		String str = "";
+		while (str != "correct"){
+			int x = 1;
+			System.out.println("Is your number " + (min + max)/2);
 			str = input.nextLine();
-		if (str == ">") {
-			min = min+x;
-		}
-		if (str == "<") {
-			max = max - x;
-		}
+			if (str == "lower") {
+				min = min*(50/x);
+			}
+			if (str == "higher") {
+				max = (min + max) / 2;
 
+			}
+			x++;
+
+		}
+			System.out.println(" i knew it " + (min + max)/2);
+		}
 	}
-    System.out.println(" i knew it " + x);
-    }
-}
+
